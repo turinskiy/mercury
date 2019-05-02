@@ -2,36 +2,43 @@ import { IUser } from './user';
 export const USERS: IUser[] = [
   {
     id: 1,
-    firstName: 'Vasya',
-    lastName: 'Pupkin',
+    firstName: 'Pharrell',
+    lastName: 'Williams',
     phone: '+38(097)-123-12-12',
     address: 'st Pushkinskaya 13'
   },
   {
     id: 2,
-    firstName: 'Grisha',
-    lastName: 'Kurochkin',
+    firstName: 'Teddy',
+    lastName: 'Bear',
     phone: '+38(097)-123-99-00',
     address: 'st Uspenskaya 21'
   },
   {
+    id: 6,
+    firstName: 'Jack',
+    lastName: 'Johns',
+    phone: '+38(097)-987-65-32',
+    address: 'st Deribasovskaya 8'
+  },
+  {
     id: 5,
-    firstName: 'Todd',
+    firstName: 'Michel',
     lastName: 'Jakson',
     phone: '+38(097)-321-65-87',
     address: 'st Segedskaya 2'
   },
   {
     id: 3,
-    firstName: 'Petya',
-    lastName: 'Vasechkin',
+    firstName: 'Toto',
+    lastName: 'Cutugno',
     phone: '+38(097)-333-97-97',
     address: 'st Jukovskogo 25'
   },
   {
     id: 4,
-    firstName: 'Tonny',
-    lastName: 'Akopyan',
+    firstName: 'Jack',
+    lastName: 'Daniels',
     phone: '+38(097)-456-56-78',
     address: 'st Kanatnaya 13'
   },
