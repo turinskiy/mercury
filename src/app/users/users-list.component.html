@@ -17,18 +17,28 @@
     <div class="row" style="font-weight: bold;">
       <div class="col-md-3">
         <span style="margin-right:5px;">First name</span>
-        <select [(ngModel)]="sortNameDirection">
-          <option *ngFor="let item of directions" [ngValue]="item">{{item.value}}</option>
+        <select [(ngModel)]="firstNameSortDirection">
+          <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
         </select>
       </div>
       <div class="col-md-3">
           <span style="margin-right:5px;">Last name</span>
-          <select [(ngModel)]="sortLastNameDirection">
-            <option *ngFor="let item of directions" [ngValue]="item">{{item.value}}</option>
+          <select [(ngModel)]="lastNameSortDirection">
+            <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
           </select>
       </div>
-      <div class="col-md-3">Phone</div>
-      <div class="col-md-3">Address</div>
+      <div class="col-md-3">
+          <span style="margin-right:5px;">Phone</span>
+          <select [(ngModel)]="phoneSortDirection">
+            <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
+          </select>
+      </div>
+      <div class="col-md-3">
+          <span style="margin-right:5px;">Address</span>
+          <select [(ngModel)]="addressSortDirection">
+            <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
+          </select>
+      </div>
     </div>
     <div *ngIf="users && users.length">
       <div *ngFor="let item of filteredUsers">

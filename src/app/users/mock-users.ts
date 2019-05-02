@@ -11,8 +11,15 @@ export const USERS: IUser[] = [
     id: 2,
     firstName: 'Grisha',
     lastName: 'Kurochkin',
-    phone: '+38(097)-4566-99-00',
+    phone: '+38(097)-123-99-00',
     address: 'st Uspenskaya 21'
+  },
+  {
+    id: 5,
+    firstName: 'Todd',
+    lastName: 'Jakson',
+    phone: '+38(097)-321-65-87',
+    address: 'st Segedskaya 2'
   },
   {
     id: 3,
