@@ -14,14 +14,19 @@
         <h4>Search results:</h4>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="font-weight: bold;">
       <div class="col-md-3">
-        Firstname
-        <select [(ngModel)]="sortDirection">
+        <span style="margin-right:5px;">First name</span>
+        <select [(ngModel)]="sortNameDirection">
           <option *ngFor="let item of directions" [ngValue]="item">{{item.value}}</option>
         </select>
       </div>
-      <div class="col-md-3">Lastname</div>
+      <div class="col-md-3">
+          <span style="margin-right:5px;">Last name</span>
+          <select [(ngModel)]="sortLastNameDirection">
+            <option *ngFor="let item of directions" [ngValue]="item">{{item.value}}</option>
+          </select>
+      </div>
       <div class="col-md-3">Phone</div>
       <div class="col-md-3">Address</div>
     </div>

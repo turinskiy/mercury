@@ -33,14 +33,22 @@ export class UsersGridComponent implements OnInit {
       : this.users;
   }
 
-  _sortDirection: SortDirection;
   directions: SortDirection[];
-  get sortDirection(): SortDirection {
-    return this._sortDirection;
+  _firstNameSortDirection: SortDirection;
+  _lastNameSortDirection: SortDirection;
+  get firstNameSortDirection(): SortDirection {
+    return this._firstNameSortDirection;
   }
-  set sortDirection(value: SortDirection) {
-    this._sortDirection = value;
-    this.performSort(this.sortDirection);
+  set firstNameSortDirection(value: SortDirection) {
+    this._firstNameSortDirection = value;
+    this.performSort(this.firstNameSortDirection, 'firstName');
+  }
+  get lastNameSortDirection(): SortDirection {
+    return this._lastNameSortDirection;
+  }
+  set lastNameSortDirection(value: SortDirection) {
+    this._lastNameSortDirection = value;
+    this.performSort(this.lastNameSortDirection, 'lastName');
   }
 
   constructor(/*private _userService: UserService*/) {
@@ -63,18 +71,18 @@ export class UsersGridComponent implements OnInit {
       new SortDirection('asc', 'A-Z'),
       new SortDirection('dsc', 'Z-A')
     ];
-    this._sortDirection = null;
+    this._firstNameSortDirection = null;
   }
 
-  performSort(value: SortDirection) {
+  performSort(value: SortDirection, column: string) {
     const data = this.filteredUsers;
     this.filteredUsers = data.sort((a, b) => {
       const isAsc = value.key === 'asc';
-      // switch (sort.active) {
-      //   case 'firstName': return compare(a.firstName, b.firstName, isAsc);
-      //   default: return 0;
-      // }
-      return compare(a.firstName, b.firstName, isAsc);
+      switch (column) {
+        case 'firstName': return compare(a.firstName, b.firstName, isAsc);
+        case 'lastName': return compare(a.lastName, b.lastName, isAsc);
+        default: return 0;
+      }
     });
   }
 }
