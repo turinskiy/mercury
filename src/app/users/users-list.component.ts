@@ -1,8 +1,7 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Inject } from '@angular/core';
+
 import { IUser } from './user';
-// import { UserService } from './user.service';
-import { USERS } from './mock-users';
-import { ValueTransformer } from '@angular/compiler/src/util';
+import { UserService } from './user.service';
 
 class SortDirection {
   key: string;
@@ -28,6 +27,7 @@ export class UsersGridComponent implements OnInit {
   pageTitle = 'Users List';
   filteredUsers: IUser[];
   users: IUser[];
+  errorMessage: string;
 
   _searchValue: string;
   get searchValue(): string {
@@ -78,13 +78,18 @@ export class UsersGridComponent implements OnInit {
     this.performSort(this.addressSortDirection, SortColumns.Address);
   }
 
-  constructor(/*private _userService: UserService*/) {
-    // this.searchValue = 'petya';
+  constructor(private _userService: UserService) {
   }
 
   ngOnInit(): void {
-    this.users = USERS; // this._userService.getUsers();
-    this.filteredUsers = this.users;
+    this._userService.getUsers().subscribe(
+      users => {
+        this.users = users;
+        this.filteredUsers = this.users;
+      },
+      error => this.errorMessage = <any>error
+    );
+
     this.sortDirections = [
       new SortDirection('asc', 'A-Z'),
       new SortDirection('dsc', 'Z-A')
