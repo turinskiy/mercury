@@ -20,7 +20,7 @@ enum SortColumns {
 }
 
 @Component({
-  selector: 'users-grid',
+  selector: 'users-list',
   templateUrl: './users-list.component.html'
 })
 export class UsersGridComponent implements OnInit {

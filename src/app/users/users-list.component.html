@@ -42,7 +42,7 @@
     </div>
     <div *ngIf="users && users.length">
       <div *ngFor="let item of filteredUsers">
-        <user-row #thumbnail [user]="item"></user-row>
+        <user-row [user]="item"></user-row>
       </div>
     </div>
   </div>

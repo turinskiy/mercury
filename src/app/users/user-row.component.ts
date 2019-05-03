@@ -4,7 +4,7 @@ import { IUser } from '../model/user';
 @Component({
   selector: 'user-row',
   template: `
-  <div class="row">
+  <div class="row" [routerLink]="['/users', user.id]">
     <div class="col-md-3">{{ user.firstName }}</div>
     <div class="col-md-3">{{ user.lastName }}</div>
     <div class="col-md-3">{{ user.phone }}</div>
@@ -14,8 +14,4 @@ import { IUser } from '../model/user';
 })
 export class UserRowComponent {
   @Input() user: IUser;
-
-  logFoo() {
-    console.log(this.user.firstName);
-  }
 }
