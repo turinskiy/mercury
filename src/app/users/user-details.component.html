@@ -1,5 +1,10 @@
 <div class="card" *ngIf="user">
   <div class="card-header">
-    {{pageTitle + ': ' + getFullName()}}
+    {{ pageTitle + ': ' + getFullName() }}
+  </div>
+  <div>
+    <button (click)="onBack()">
+      &lt; Back
+    </button>
   </div>
 </div>
