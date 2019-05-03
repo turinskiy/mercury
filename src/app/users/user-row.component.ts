@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IUser } from './user';
+import { IUser } from '../model/user';
 
 @Component({
   selector: 'user-row',

@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Inject } from '@angular/core';
 
-import { IUser } from './user';
-import { UserService } from './user.service';
+import { IUser } from '../model/user';
+import { UserService } from '../services/user.service';
 
 class SortDirection {
   key: string;
