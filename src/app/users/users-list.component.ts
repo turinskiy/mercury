@@ -106,13 +106,14 @@ export class UsersGridComponent implements OnInit {
   }
 
   performSearch(searchTerm: string): IUser[] {
-    searchTerm = searchTerm.toLocaleLowerCase();
-    // const reg = new RegExp(`*${searchTerm}*`, 'gi');
-    // return reg.test(user.firstName) || reg.test(user.lastName);
-    const temp = this.users.filter(
-      (user: IUser) => user.firstName.toLowerCase().indexOf(searchTerm) !== -1
+    searchTerm = searchTerm.toLowerCase();
+    return this.users.filter(
+      (user: IUser) =>
+        user.firstName.toLowerCase().indexOf(searchTerm) !== -1 ||
+        user.lastName.toLowerCase().indexOf(searchTerm) !== -1 ||
+        user.phone.indexOf(searchTerm) !== -1 ||
+        user.address.toLowerCase().indexOf(searchTerm) !== -1
     );
-    return temp;
   }
 
   performSort(value: SortDirection, column: SortColumns) {
