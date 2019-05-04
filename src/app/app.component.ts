@@ -3,20 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <nav class="navbar navbar-expand navbar-light bg-light">
-      <a class="navbar-brand">{{ pageTitle }}</a>
-      <ul class="nav nav-pills">
-        <li>
-          <a class="nav-link" [routerLink]="['/start']">Start Page</a>
-        </li>
-        <li>
-          <a class="nav-link" [routerLink]="['/users']">Users List</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="container">
-      <router-outlet></router-outlet>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">{{ pageTitle }}</li>
+          <li>
+            <a class="nav-link" [routerLink]="['/start']">Start Page</a>
+          </li>
+          <li>
+            <a class="nav-link" [routerLink]="['/users']">Users List</a>
+          </li>
+        </ul>
+      </div>
     </div>
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent {

@@ -1,56 +1,56 @@
-<div class="card">
-  <div class="card-header">&nbsp;</div>
-  <div class="card-body">
-    <div class="container-fluid">
-      <div class="text-center">
-        <a href="https://teradek.com/" target="blank">
-          <img
-            src="./assets/images/logo.png"
-            class="img-responsive center-block"
-            style="max-height:300px;padding-bottom:50px"
-        /></a>
-      </div>
-
-      <div class="text-left">
-        <h3>Task</h3>
-        Create small SPA based on Angular 2+ framework.
-        <h3>Description</h3>
-        The test app should contain a users list page and a user details page.
-        For markup you can use any CSS framework or a clear CSS (We use Zurb
-        Foundation). The usage of flexbox will be a plus.
-        <ol>
-          <li>
-            User list page should have a grid component with sort and search
-            functionality.
-            <ul style="list-style: none;">
-              <li>
-                ✔ Sort and search fields should be customizable. The sorting
-                item can be choose by &lt;select&gt;. (Sort name by A-Z, Sort
-                name by Z-A etc.).
-              </li>
-              <li>
-                ✔ Row of the grid should be a separate component and use how a
-                template for grid rows.
-              </li>
-              <li>
-                ✔ After clicking on the row, the user goes to the user details
-                page.
-              </li>
-            </ul>
-          </li>
-          <li>
-            The user details page should have the same information as the grid
-            row.
-          </li>
-          <li>
-            The users list data should be received from a simple Angular
-            service. As a DB, you can use a static JSON file.
-          </li>
-        </ol>
-      </div>
-      <div class="text-center">
-        Please follow the navigation link <a [routerLink]="['/users']">Users List</a> to see the Task implementation.
-      </div>
-    </div>
+<div class="row column text-center">
+<div class="card" style="width: 100%; margin-top: 15px">
+  <div class="card-divider">&nbsp;</div>
+  <div class="text-center">
+    <a href="https://teradek.com/" target="blank">
+      <img
+        src="./assets/images/logo.png"
+        class="img-responsive center-block"
+        style="max-height:300px; padding-bottom:50px; padding-top:15px;"
+    /></a>
   </div>
+  <div class="card-section text-justify">
+    <h3>Task</h3>
+    <p>Create small SPA based on Angular 2+ framework.</p>
+    <h3>Description</h3>
+    <p>
+      The test app should contain a users list page and a user details page. For
+      markup you can use any CSS framework or a clear CSS (We use Zurb
+      Foundation). The usage of flexbox will be a plus.
+    </p>
+    <ol>
+      <li>
+        User list page should have a grid component with sort and search
+        functionality.
+        <ul style="list-style: none;">
+          <li>
+            ✔ Sort and search fields should be customizable. The sorting item
+            can be choose by &lt;select&gt;. (Sort name by A-Z, Sort name by Z-A
+            etc.).
+          </li>
+          <li>
+            ✔ Row of the grid should be a separate component and use how a
+            template for grid rows.
+          </li>
+          <li>
+            ✔ After clicking on the row, the user goes to the user details page.
+          </li>
+        </ul>
+      </li>
+      <li>
+        The user details page should have the same information as the grid row.
+      </li>
+      <li>
+        The users list data should be received from a simple Angular service. As
+        a DB, you can use a static JSON file.
+      </li>
+    </ol>
+  </div>
+  <div class="text-center card-divider">
+    <p>
+      Please follow the navigation link
+      <a [routerLink]="['/users']">Users List</a> to see the Task implementation
+    </p>
+  </div>
+</div>
 </div>
