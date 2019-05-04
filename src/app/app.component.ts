@@ -16,7 +16,9 @@ import { Component } from '@angular/core';
         </ul>
       </div>
     </div>
-    <router-outlet></router-outlet>
+    <div class="grid-container">
+      <router-outlet></router-outlet>
+    </div>
   `
 })
 export class AppComponent {

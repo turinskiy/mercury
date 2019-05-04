@@ -1,43 +1,77 @@
 <div class="card">
   <div class="card-divider">
-    {{ pageTitle }}
+    <h4>{{ pageTitle }}</h4>
   </div>
   <div class="card-section">
-    <div class="row">
-      <div class="col-md-2">Search:</div>
-      <div class="col-md-4">
-        <input type="text" [(ngModel)]="searchValue" />
+    <div class="grid-x">
+      <div class="cell small-1">
+        <label for="search-user" class="middle">Search:</label>
+      </div>
+      <div class="cell small-3">
+        <input type="text" id="search-user" [(ngModel)]="searchValue" />
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Search results:</h4>
+    <hr />
+    <div class="grid-x user-list">
+      <div class="cell small-3">
+        <div class="grid-x">
+          <div class="cell small-1"></div>
+          <div class="cell small-4">
+            <label for="firstname-sort" class="middle">First name</label>
+          </div>
+          <div class="cell small-3">
+            <select id="firstname-sort" [(ngModel)]="firstNameSortDirection">
+              <option *ngFor="let item of sortDirections" [ngValue]="item">{{
+                item.value
+              }}</option>
+            </select>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row" style="font-weight: bold;">
-      <div class="col-md-3">
-        <span style="margin-right:5px;">First name</span>
-        <select [(ngModel)]="firstNameSortDirection">
-          <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
-        </select>
+      <div class="cell small-3">
+        <div class="grid-x">
+          <div class="cell small-1"></div>
+          <div class="cell small-4">
+            <label class="middle">Last name</label>
+          </div>
+          <div class="cell small-3">
+            <select [(ngModel)]="lastNameSortDirection">
+              <option *ngFor="let item of sortDirections" [ngValue]="item">{{
+                item.value
+              }}</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-          <span style="margin-right:5px;">Last name</span>
-          <select [(ngModel)]="lastNameSortDirection">
-            <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
-          </select>
+      <div class="cell small-3">
+        <div class="grid-x">
+          <div class="cell small-1"></div>
+          <div class="cell small-4">
+            <label class="middle">Phone</label>
+          </div>
+          <div class="cell small-3">
+            <select [(ngModel)]="phoneSortDirection">
+              <option *ngFor="let item of sortDirections" [ngValue]="item">{{
+                item.value
+              }}</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-          <span style="margin-right:5px;">Phone</span>
-          <select [(ngModel)]="phoneSortDirection">
-            <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
-          </select>
-      </div>
-      <div class="col-md-3">
-          <span style="margin-right:5px;">Address</span>
-          <select [(ngModel)]="addressSortDirection">
-            <option *ngFor="let item of sortDirections" [ngValue]="item">{{item.value}}</option>
-          </select>
+      <div class="cell small-3">
+        <div class="grid-x">
+          <div class="cell small-1"></div>
+          <div class="cell small-4">
+            <label class="middle">Address</label>
+          </div>
+          <div class="cell small-3">
+            <select [(ngModel)]="addressSortDirection">
+              <option *ngFor="let item of sortDirections" [ngValue]="item">{{
+                item.value
+              }}</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
     <div *ngIf="users && users.length">

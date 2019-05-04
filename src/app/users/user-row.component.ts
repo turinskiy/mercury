@@ -3,14 +3,18 @@ import { IUser } from '../model/user';
 
 @Component({
   selector: 'user-row',
-  template: `
-  <div class="row" [routerLink]="['/users', user.id]">
-    <div class="col-md-3">{{ user.firstName }}</div>
-    <div class="col-md-3">{{ user.lastName }}</div>
-    <div class="col-md-3">{{ user.phone }}</div>
-    <div class="col-md-3">{{ user.address }}</div>
-  </div>
-  `
+  templateUrl: './user-row.component.html',
+  styles: [
+    `
+    .user-row div {
+      border-top: 1px solid #cacaca;
+    }
+    .user-row:hover {
+      background-color: #e6e6e6;
+      cursor: pointer;
+    }
+    `
+  ]
 })
 export class UserRowComponent {
   @Input() user: IUser;

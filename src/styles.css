@@ -1,1 +1,5 @@
 @import '~foundation-sites/dist/css/foundation.min.css';
+
+.card {
+  margin-top: 15px;
+}

@@ -21,7 +21,17 @@ enum SortColumns {
 
 @Component({
   selector: 'users-list',
-  templateUrl: './users-list.component.html'
+  templateUrl: './users-list.component.html',
+  styles: [
+    `
+      .user-list label {
+        font-weight: bold;
+      }
+      div {
+        border: 0 solid black;
+      }
+    `
+  ]
 })
 export class UsersGridComponent implements OnInit {
   pageTitle = 'Users List';
@@ -78,8 +88,7 @@ export class UsersGridComponent implements OnInit {
     this.performSort(this.addressSortDirection, SortColumns.Address);
   }
 
-  constructor(private _userService: UserService) {
-  }
+  constructor(private _userService: UserService) {}
 
   ngOnInit(): void {
     this._userService.getUsers().subscribe(
@@ -87,7 +96,7 @@ export class UsersGridComponent implements OnInit {
         this.users = users;
         this.filteredUsers = this.users;
       },
-      error => this.errorMessage = <any>error
+      error => (this.errorMessage = <any>error)
     );
 
     this.sortDirections = [
@@ -127,9 +136,13 @@ export class UsersGridComponent implements OnInit {
 
   clearInactiveSortColumns(activeColumn: SortColumns) {
     this._firstNameSortDirection =
-      activeColumn !== SortColumns.FirstName ? null : this._firstNameSortDirection;
+      activeColumn !== SortColumns.FirstName
+        ? null
+        : this._firstNameSortDirection;
     this._lastNameSortDirection =
-      activeColumn !== SortColumns.LastName ? null : this._lastNameSortDirection;
+      activeColumn !== SortColumns.LastName
+        ? null
+        : this._lastNameSortDirection;
     this._phoneSortDirection =
       activeColumn !== SortColumns.Phone ? null : this._phoneSortDirection;
     this._addressSortDirection =
