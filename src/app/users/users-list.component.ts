@@ -151,6 +151,6 @@ export class UsersGridComponent implements OnInit {
   }
 }
 
-function compare(a: number | string, b: number | string, isAsc: boolean) {
+function compare(a: string, b: string, isAsc: boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
